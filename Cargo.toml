@@ -1,0 +1,6 @@
+[package]
+name = "Extraclase2PatronesdediseñoRust"
+version = "0.1.0"
+authors = ["Alba <sebasjosue84@gmail.com>"]
+
+[dependencies]
