@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 include!("Facade.rs");
 include!("AbstFactory.rs");
+include!("Builder.rs");
 
 fn main() {
 
@@ -8,7 +9,7 @@ fn main() {
     println!();
     //*********Utilizando el patron FACADE********
 
-    println!("********Utilizando FACADE*****\n");
+    println!("********Utilizando el patron FACADE*****\n");
 
     println!("###Encendiendo piloto automatico###\n");
 
@@ -28,9 +29,45 @@ fn main() {
 
     //*********Utilizando el patron ABSTRACT FACTORY********
 
-    let b=abstract_factory{y:1};
+    println!("*********Utilizando el patron ABSTRACT FACTORY********\n");
+    //@@@@@ COMBO#1 @@@@@
+    println!("@@@@@ COMBO#1 LISTO @@@@@");
+    let b=abstract_factory{orden:1};
     b.elegir_orden();
+    println!();
+
+    //@@@@@ COMBO#2 @@@@@
+    println!("@@@@@ COMBO#2 LISTO @@@@@");
+    let b=abstract_factory{orden:2};
+    b.elegir_orden();
+    println!();
+
+    //@@@@@ COMBO#2 @@@@@
+    println!("@@@@@ COMBO#1 LISTO @@@@@");
+    let b=abstract_factory{orden:3};
+    b.elegir_orden();
+    print!("\n");
+    print!("\n");
+
+
+
+    //*********Utilizando el patron ABSTRACT FACTORY********
+    println!("*********Utilizando el patron BUILDER********\n");
+    print!("\n");
+
+    let c = ConstructorCuadrado::new()
+        .x(1.0)
+        .y(2.0)
+        .lado(2.0)
+        .finalizar();
+
+    println!("area: {}", c.area());
+    println!("x: {}", c.x);
+    println!("y: {}", c.y);
+
 
 
 }
+
+//Referencias : Patron Builder: https://goyox86.gitbooks.io/el-libro-de-rust/content/method-syntax.html
 
