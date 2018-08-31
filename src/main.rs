@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 include!("Facade.rs");
 include!("AbstFactory.rs");
+include!("Builder.rs");
 
 fn main() {
 
@@ -45,8 +46,28 @@ fn main() {
     println!("@@@@@ COMBO#1 LISTO @@@@@");
     let b=abstract_factory{orden:3};
     b.elegir_orden();
-    println!();
+    print!("\n");
+    print!("\n");
+
+
+
+    //*********Utilizando el patron ABSTRACT FACTORY********
+    println!("*********Utilizando el patron BUILDER********\n");
+    print!("\n");
+
+    let c = ConstructorCuadrado::new()
+        .x(1.0)
+        .y(2.0)
+        .lado(2.0)
+        .finalizar();
+
+    println!("area: {}", c.area());
+    println!("x: {}", c.x);
+    println!("y: {}", c.y);
+
 
 
 }
+
+//Referencias : Patron Builder: https://goyox86.gitbooks.io/el-libro-de-rust/content/method-syntax.html
 

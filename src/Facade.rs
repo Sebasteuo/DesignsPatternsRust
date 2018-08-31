@@ -1,6 +1,11 @@
-struct PilotoAutomatico {}
+struct PilotoAutomatico {} //Este "struct" hace las veces de clase "PilotoAutomatico"
+
+/* Mediante este "impl" se hace la definición de los métodos que tendría
+ la calse PilotoAutomatico */
 
 impl PilotoAutomatico {
+
+    //Estos "fn" funcionan como los métodos de la clase PilotoAutomatico
 
     pub fn altura_vuelo_aut(&self){
         println!("Ajustando altura crucero del avion automaticamente");
@@ -29,12 +34,15 @@ impl PilotoAutomatico {
 
 }
 
-pub struct FacadePiloto{
+pub struct FacadePiloto{ //Este "struct" vendría siendo la clase Facade para la clase PilotoAutomatio
     y:bool,
 }
 
 
-impl FacadePiloto{
+impl FacadePiloto{ //Se hace la implementación porpiamente del Facade
+
+/* Este "fn" actúa como un método que si lo que recibe un true o un
+false activa o desactiva el piloto automatico respectivamente */
 
     fn validacion(self) {
 

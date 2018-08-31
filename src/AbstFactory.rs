@@ -1,12 +1,14 @@
-pub struct Refresco{
+pub struct Refresco{ // "Clase" Refresco
 
 }
 
-impl Refresco {
+impl Refresco { //Implementacion de la clase Refresco
+
+    /* Distintos "fn" que funcionan como métodos que muestran
+      información sobre distintos tipos de refresco */
 
     fn coca_cola(&self){
         print!("Su refresco es coca cola\n");
-
     }
 
 
@@ -21,11 +23,14 @@ impl Refresco {
 }
 
 
-pub struct pizza{
+pub struct pizza{ // "Clase" pizza
 
 }
 
-impl pizza{
+impl pizza{ // Implementacion de la clase pizza
+
+    /* Distintos "fn" que funcionan como métodos que muestran
+      información sobre distintos tipos de pizza */
 
     fn pizza_jyq(&self){
         print!("Su pizza es suprema\n");
@@ -42,12 +47,17 @@ impl pizza{
     }
 }
 
-struct abstract_factory{
+struct abstract_factory{ // Esta es el "struct" que servirá como la clase Abstract Factory
     orden:i32,
 
 }
 
-impl abstract_factory {
+impl abstract_factory { // Se implementa la clase "abstract_factory"
+
+    /* De acuerdo al numero que reciba como parámetro la clase "abtract_factory" se
+    elegirá un determinado combo la cual es categoría de una familia de productos y se producirá
+    dicho combo*/
+
     fn elegir_orden(&self){
         if self.orden==1 {
             let x= Refresco{};
