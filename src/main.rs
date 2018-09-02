@@ -66,8 +66,21 @@ fn main() {
     println!("y: {}", c.y);
 
 
+    //***********Utilizando el patron Observer**********
+
+    let display = Display::new("COMPURADORA".to_string());
+    let display2 = Display::new("COMPURADORA2".to_string());
+    let mut weather = Weather{temperature: 19.0, observers: Vec::new()};
+    weather.add_observer(&display);
+    weather.add_observer(&display2);
+    weather.set_temperature(20.0);
+    weather.delete_observer(&display2);
+    weather.set_temperature(21.0);
+
+
 
 }
 
 //Referencias : Patron Builder: https://goyox86.gitbooks.io/el-libro-de-rust/content/method-syntax.html
+//              Patron Observer : https://github.com/eliovir/rust-examples/blob/master/design_pattern-observer.rs
 
