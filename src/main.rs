@@ -2,6 +2,7 @@
 include!("Facade.rs");
 include!("AbstFactory.rs");
 include!("Builder.rs");
+include!("Adapter2.rs");
 
 fn main() {
 
@@ -51,7 +52,7 @@ fn main() {
 
 
 
-    //*********Utilizando el patron ABSTRACT FACTORY********
+    //*********Utilizando el patron BUILDER********
     println!("*********Utilizando el patron BUILDER********\n");
     print!("\n");
 
@@ -68,6 +69,8 @@ fn main() {
 
     //***********Utilizando el patron Observer**********
 
+    println!("*********Utilizando el patron OBSERVER********\n\n");
+
     let display = Display::new("COMPURADORA".to_string());
     let display2 = Display::new("COMPURADORA2".to_string());
     let mut weather = Weather{temperature: 19.0, observers: Vec::new()};
@@ -77,7 +80,25 @@ fn main() {
     weather.delete_observer(&display2);
     weather.set_temperature(21.0);
 
+    //***********Utilizando el patron ADAPTER**********
+    println!("*********Utilizando el patron ADAPTER********\n\n");
 
+    let oso = Oso{
+        nombre: "Paco"
+    };
+
+    let oso_teddy = OsoTeddy{
+        nombre: "Ted"
+    };
+
+    println!("{}", oso_teddy.sonar());
+
+    let oso_adapter = OsoAdapter{
+        teddy: oso_teddy
+    };
+
+    println!("{}", oso.rugir(oso_teddy));
+    println!("{} || con adapter", oso_adapter.rugir());
 
 }
 
